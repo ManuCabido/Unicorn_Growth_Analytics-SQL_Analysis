@@ -1,70 +1,149 @@
-## Unicorn Growth Strategy – SQL Project
+# Unicorn Growth Strategy – SQL Project
 
-SQL case study on global **unicorn companies**, using DataCamp’s database as a starting point but pushing the analysis much further with a growth, strategy and investor‑oriented lens.
+SQL case study on global unicorn companies, using DataCamp’s database as a starting point and extending it into a **portfolio-grade analysis** with a **growth, strategy, and investor-oriented lens**.
 
-***
+This project focuses on understanding **where value is created in the private tech ecosystem**, how fast companies scale, and how capital efficiency and industry dynamics differ across sectors and geographies.
 
-## Context and goals
+---
 
-- Identify which industries and geographies concentrate new unicorns and where the most attractive growth and investment opportunities may lie.  
-- Practice “analyst‑style” SQL (CTEs, window functions, composite metrics) with an M&A / corporate finance perspective rather than only descriptive EDA.
+## Motivation
 
-***
+This project was built to move beyond intuition and analyze the startup and venture ecosystem through **structured, data-driven reasoning**.
+
+Rather than treating unicorn data as a purely exploratory exercise, the goal was to approach it from a **growth and capital allocation perspective**: understanding **which industries consistently create value, how quickly companies scale, and where capital is most efficiently deployed**.
+
+Given a long-term interest in strategy, growth, and investment-driven roles, this project serves both as a **technical SQL showcase** and as a framework to reason more rigorously about how high-growth businesses are built, funded, and scaled.
+
+---
+
+## Context and Goals
+
+* Identify **industries and geographies** that concentrate unicorn creation and aggregate valuation.
+* Understand **market phases** (early growth, expansion, boom, normalization) in the global unicorn ecosystem.
+* Evaluate **capital efficiency**, valuation dispersion, and time-to-scale across sectors.
+* Practice **analyst-style SQL** (CTEs, window functions, composite metrics) with a clear **business and investment mindset**, not just descriptive EDA.
+
+---
 
 ## Dataset
 
-- Source: DataCamp unicorn companies PostgreSQL database, with company name, industry, country, founding year, year of unicorn status, valuation and key investors.
-- Scope: private companies valued above 1B USD worldwide, across multiple industries (Fintech, Internet Software & Services, E‑commerce, AI, etc.).
+* **Source**: DataCamp Unicorn Companies PostgreSQL database
+* **Scope**:
 
-***
+  * Private companies valued above $1B
+  * Global coverage across multiple industries
+* **Key fields**:
 
-## What is analyzed
+  * Company, industry, country, city
+  * Year founded, year achieving unicorn status
+  * Valuation, total funding raised, investors
 
-- Dynamics of unicorn creation by year, region and industry, identifying market phases (gradual growth, strong expansion, exceptional boom, normalization).
-- Industry “momentum” metrics: number of new unicorns, year‑over‑year growth and share of total valuation to prioritize strategically attractive sectors.
-- Valuation structure: mean vs median valuations, valuation bands (1–2B, 2–5B, 5–10B, 10B+) and value concentration by industry to see where private “market cap” accumulates.
-- Capital efficiency: relationship between valuation and total funding raised, comparing which industries generate more value per dollar invested.
-- Time to unicorn: difference between founding year and unicorn year, segmented by industry and region.
+---
 
-***
+## What Is Analyzed
 
-## Tech stack
+### 1. Trend Analysis & Market Dynamics
 
-- **Language**: SQL (PostgreSQL).  
-- **Key concepts**: CTEs, window functions (ROW_NUMBER, LAG, moving averages), conditional aggregations, case statements to create market phases and valuation bands.
-- Environment: PostgreSQL server with the database hosted on DataCamp’s infrastructure.
+* Unicorn creation by **year and industry**
+* Industry share of yearly unicorn creation
+* **Year-over-year growth** by sector
+* Identification of structural vs cyclical growth patterns
 
-***
+### 2. Valuation & Unit Economics
 
-## Repository structure
+* Average vs median valuations by year and industry
+* Valuation skewness and distribution analysis
+* Valuation bands (1–2B, 2–5B, 5–10B, 10B+)
+* Industry-level “private market cap” concentration
 
-- `sql/` – core queries, grouped by analysis block (unicorn creation, industry momentum, valuations, capital efficiency, time to unicorn).  
-- `notebooks/`  – additional exploration, query testing and interpretation notes.  
-- `outputs/` – exported result tables (CSV) and, where relevant, screenshots of the visualizations used in the analysis.
+### 3. Market Concentration & Competition
 
-***
+* Industry ranking by total market capitalization
+* Market share and **Herfindahl-Hirschman Index (HHI)** contributions
+* Identification of fragmented vs concentrated sectors
 
-## Key insights (executive summary)
+### 4. Cohort & Velocity Analysis
 
-- A small set of industries concentrates most new unicorn creation and aggregate valuation, with Fintech and Internet Software & Services standing out in recent years.
-- Clear differences appear between “volume” industries (many lower‑ticket unicorns) and “mega‑unicorn” industries where a few companies hold most of the value.
-- Average time to reach unicorn status and capital efficiency vary significantly by sector, suggesting different risk‑return profiles for investors and corporates.
+* Time to reach unicorn status (founding → unicorn year)
+* Fastest and slowest scaling industries
+* Differences in scaling velocity across sectors
 
-***
+### 5. Geographic & Funding Patterns
 
-## Motivation
-This project was built to analyze the unicorn ecosystem through a data-driven, market-level lens, moving beyond anecdotal narratives to quantifiable trends. Rather than focusing on individual success stories, the goal is to understand where unicorns emerge, how fast they scale, how capital is allocated across industries, and which sectors show sustained momentum over time.
+* Unicorn density by **country and city**
+* Regional valuation hubs and industry specialization
+* Capital efficiency: valuation vs total funding raised
+* Identification of high-multiple vs capital-intensive sectors
 
-The venture capital ecosystem is fundamentally about capital allocation under uncertainty. This analysis uses SQL to structure that uncertainty: identifying structural growth sectors, valuation dynamics, market concentration, and capital efficiency across industries. The project is designed as a decision-support exercise, similar to how growth teams, investors, or strategy units would assess opportunity landscapes.
+### 6. Advanced Predictive Indicators
 
-## Who this is for
+* **Industry Momentum Score (0–100)** combining:
 
-- Data Analysts and aspiring **Analytics / Strategy** professionals who want to see SQL applied to a real‑world case with strong business storytelling.  
-- People interested in venture capital, M&A and corporate development looking for a quantitative framework to think about high‑growth industries.
+  * Recency of unicorn creation
+  * Total market capitalization
+  * Average valuation levels
+* Strategic prioritization of industries based on forward-looking momentum
 
-***
+---
 
-## Next steps
+## Key Insights (Executive Summary)
 
-- Add risk‑oriented metrics (e.g., time to unicorn by macro cohort) and compare them with liquidity cycles.  
-- Connect this base with other sources (funding rounds, exits) to extend the analysis from valuations to realized returns.
+* A small set of industries concentrates the majority of unicorn creation and valuation, with **Fintech, Internet Software & Services, AI, and E-commerce** leading structurally.
+* **2021 represents a clear outlier boom**, followed by normalization rather than collapse.
+* Significant differences exist between:
+
+  * **Volume-driven industries** (many unicorns, lower average valuations)
+  * **Value-concentrated industries** (fewer companies, higher capital intensity)
+* Capital efficiency and time-to-scale vary meaningfully by sector, implying **different risk-return profiles** for investors and corporate acquirers.
+
+---
+
+## Tech Stack
+
+* **Language**: SQL (PostgreSQL)
+* **Core concepts**:
+
+  * CTEs
+  * Window functions (LAG, RANK, rolling calculations)
+  * Conditional aggregations
+  * Percentiles and distribution analysis
+  * Composite scoring models
+* **Environment**: PostgreSQL database hosted on DataCamp
+
+---
+
+## Repository Structure
+
+```
+sql/
+│── trend_analysis.sql
+│── valuation_analysis.sql
+│── market_concentration.sql
+│── cohort_velocity.sql
+│── geographic_patterns.sql
+│── momentum_score.sql
+
+notebooks/
+│── exploration_notes.md
+│── intermediate_checks.sql
+
+outputs/
+│── result_tables.csv
+│── selected_visuals/
+```
+
+---
+
+## Who This Is For
+
+* Data Analysts and aspiring **Growth / Strategy professionals** looking to see SQL applied to real business decisions.
+* Candidates targeting **VC, Corporate Development, or M&A-adjacent roles**.
+* Anyone interested in translating raw startup data into **actionable strategic insights**.
+
+---
+
+## Next Steps
+
+* Incorporate macro-economic cohorts to contextualize unicorn creation cycles.
+* Extend the dataset with funding rounds and exits to link **valuation to realized returns**.
+* Build lightweight visualizations or dashboards on top of the SQL outputs.
