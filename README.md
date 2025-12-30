@@ -52,6 +52,11 @@ SQL case study on global **unicorn companies**, using DataCamp’s database as a
 
 ***
 
+## Motivation
+This project was built to analyze the unicorn ecosystem through a data-driven, market-level lens, moving beyond anecdotal narratives to quantifiable trends. Rather than focusing on individual success stories, the goal is to understand where unicorns emerge, how fast they scale, how capital is allocated across industries, and which sectors show sustained momentum over time.
+
+The venture capital ecosystem is fundamentally about capital allocation under uncertainty. This analysis uses SQL to structure that uncertainty: identifying structural growth sectors, valuation dynamics, market concentration, and capital efficiency across industries. The project is designed as a decision-support exercise, similar to how growth teams, investors, or strategy units would assess opportunity landscapes.
+
 ## Who this is for
 
 - Data Analysts and aspiring **Analytics / Strategy** professionals who want to see SQL applied to a real‑world case with strong business storytelling.  
